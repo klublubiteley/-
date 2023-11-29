@@ -1,23 +1,28 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 int main()
 {
 string str;
 string subStr;
-cout << "Enter the line" << endl;
+string elem;
+
+cout << "Enter the line. The separator is colon" << endl;
 cin >> str;
 cout << "Enter the substring you want to find" << endl;
 cin >> subStr;
 
-size_t pos = str.find(subStr);
-cout << pos << endl;
+istringstream iss(str);
+    while (getline(iss, elem, ';')) {
+        size_t pos = elem.find(subStr); 
+        //Zähler hinzufügen
 
-if (str.find(subStr) == string::npos)
-{
-cout << "Not found" << endl;
-}
+        if (elem.find(subStr) == string::npos) { 
+            cout << "Not found" << endl; 
+        } else { cout << pos << endl; }
+    }
 
 return 0;
 }
