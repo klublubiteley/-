@@ -10,11 +10,11 @@ string subStr;
 string elem;
 int row = 0;
 
-cout « "Enter the line. The separator is colon" « endl;
-cin » str;
-cout « "Enter the substring you want to find" « endl;
-cin » subStr;
-cout « "We found it in the rows under the indexes: " « endl;
+cout << "Enter the line. The separator is colon" << endl;
+cin >> str;
+cout << "Enter the substring you want to find" << endl;
+cin >> subStr;
+cout << "We found it in the rows under the indexes: " << endl;
 
 istringstream iss(str);
 while (getline(iss, elem, ';')) {
@@ -23,8 +23,8 @@ size_t index = elem.find(subStr);
 row++;
 
 if (elem.find(subStr) == string::npos) {
-cout « "Not found" « endl;
-} else { cout « "row: " « row « " " « "index: " « index « endl; }
+cout << "Not found" << endl;
+} else { cout << "row: " << row << " " << "index: " << index << endl; }
 }
 
 return 0;
